@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect
-from .models import register_user
+from .models import register_user, login, question
 import random
 from django.contrib import messages
 
 
 def index(request):
-    return render(request, 'index.html')
+    # get the questions from the database
+    questions = question.objects.all()
+    context = {
+        'questions': questions
+    }
+    return render(request, 'index.html', context)
 
 
 def login(request):
@@ -17,8 +22,8 @@ def login(request):
         password = request.POST['password']
 
         print(user_id, email, password)
-        login = login(user_id, email, password)
-        login.save()
+        l = login(user_id, email, password)
+        l.save()
         return redirect(request, 'index.html')
         # Check if a user with the same username already exists
         # if register_user.objects.filter(user_email=email).exists():
@@ -81,6 +86,20 @@ def register(request):
 
 
 def create_question(request):
+    five_digit_random = random.randrange(10000, 100000)
+    print("5-Digit Random Number:", five_digit_random)
+    if request.method == 'POST':
+        question_id = five_digit_random
+        question_title = request.POST['question_title']
+        question_text = request.POST['question']
+        question_already_done = request.POST['already_done']
+        question_tags = request.POST['question_tags']
+
+        q = question(question_id, question_title, question_text, question_already_done,
+                     question_tags)
+        q.save()
+        print(question_id, question_title, question_text, question_already_done,
+              question_tags)
     return render(request, 'createQuestions.html')
 
 

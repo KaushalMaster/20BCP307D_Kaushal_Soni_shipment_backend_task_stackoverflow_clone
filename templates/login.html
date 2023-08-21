@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>Login</h1>
-    <form action="{% url 'login' %}">
+    <form action="{% url 'login' %}" method="POST">
       {% csrf_token %}
       <label for="password">Email</label>
       <input type="email" name="email" id="email" placeholder="Enter Email" />

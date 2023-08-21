@@ -7,7 +7,8 @@
   </head>
   <body>
     <h1>Ask a Public Question</h1>
-    <form action="#">
+    <form action="{% url 'create_question' %}" method="POST">
+      {% csrf_token %}
       <input
         type="text"
         name="question_title"
