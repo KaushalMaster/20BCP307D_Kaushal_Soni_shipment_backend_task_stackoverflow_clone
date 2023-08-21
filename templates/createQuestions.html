@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Question</title>
+  </head>
+  <body>
+    <h1>Ask a Public Question</h1>
+    <form action="#">
+      <input
+        type="text"
+        name="question_title"
+        id="question_title"
+        placeholder="Enter Question title"
+      />
+      <p>Be specific and imagine you’re asking a question to another person.</p>
+      <span
+        >Introduce the problem and expand on what you put in the title. Minimum
+        20 characters. </span
+      ><br />
+      <textarea
+        name="question"
+        id="question"
+        cols="30"
+        rows="10"
+        placeholder="Ask the Question ?"
+      ></textarea>
+      <br />
+      <label for="already done">What you Already did?</label>\
+      <textarea
+        name="already_done"
+        id="already_done"
+        cols="30"
+        rows="10"
+        placeholder="Enter what you already did ?"
+      ></textarea>
+      <label for="tags">Tags</label>
+      <p>
+        Add up to 5 tags to describe what your question is about. Start typing
+        to see suggestions.
+      </p>
+      <input
+        type="text"
+        name="question_tags"
+        id="question_tags"
+        placeholder="Enter Tags"
+      />
+      <input type="submit" value="Post" />
+    </form>
+  </body>
+</html>

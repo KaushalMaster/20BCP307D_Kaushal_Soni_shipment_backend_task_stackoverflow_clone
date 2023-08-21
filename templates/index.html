@@ -3,9 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Stack Overflow</title>
   </head>
   <body>
-    <h1>Hello</h1>
+    <h1>Welcome Username</h1>
+    <h3>Questions:</h3>
+
+    <a href="{% url 'create_question' %}">Ask a Question</a>
+
+    <div class="question_container">
+      <div class="question_title"><p>Question_title</p></div>
+
+      <div class="question_tags"><p>Question Tags</p></div>
+
+      <div class="question_reviews">
+        <p>Question_votes_count</p>
+        <p>Question_answer_count</p>
+        <p>question_views_count</p>
+      </div>
+
+      <div class="question_posted_by">
+        <p>Question Posted by : username</p>
+      </div>
+    </div>
   </body>
 </html>

@@ -12,4 +12,12 @@ def login(request):
 
 
 def register(request):
-    return render(request, 'register.html')
+    return render(request, 'Register.html')
+
+
+def create_question(request):
+    return render(request, 'createQuestions.html')
+
+
+def question_details(request):
+    return render(request, 'question_info.html')
