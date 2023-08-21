@@ -9,7 +9,7 @@
     <button>Signup with Google</button>
     <button>Signup with github</button>
     <button>Signup with facebook</button>
-    <form action="#">
+    <form action="{% url 'register' %}" method="POST">
       {% csrf_token %}
       <label for="display_name">Display Name</label>
       <input type="text" name="display_name" id="display_name" />
