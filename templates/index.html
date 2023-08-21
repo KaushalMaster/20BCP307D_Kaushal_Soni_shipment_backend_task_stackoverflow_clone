@@ -11,7 +11,15 @@
 
     <a href="{% url 'create_question' %}">Ask a Question</a>
 
-    {% for question in contex t%} {{ question.title }} {% endfor %}
+    <!-- {% for question in context %} {{ question.title }} {% endfor %} -->
+
+    <h1>Question List</h1>
+    <ul>
+      {% for q in questions %}
+      <li><a href="{% url 'question_details' %}">{{ q.question_title }}</a></li>
+      {% endfor %}
+    </ul>
+
     <div class="question_container">
       <div class="question_title"><p>Question_title</p></div>
 

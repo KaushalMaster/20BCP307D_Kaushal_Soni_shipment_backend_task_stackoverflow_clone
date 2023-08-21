@@ -7,10 +7,8 @@ from django.contrib import messages
 def index(request):
     # get the questions from the database
     questions = question.objects.all()
-    context = {
-        'questions': questions
-    }
-    return render(request, 'index.html', context)
+
+    return render(request, 'index.html', {'questions': questions})
 
 
 def login(request):
